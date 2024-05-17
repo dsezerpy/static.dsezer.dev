@@ -1,0 +1,103 @@
+.tags {
+    display: inline;
+    font-weight: bold;
+}
+
+.tags::before {
+    content: "[";
+}
+
+.tags::after {
+    content: "]";
+}
+
+.tags *:not(:last-type)::after {
+    content: " |"
+}
+
+.emoji {
+    height: 1em;
+    width: 1em;
+    vertical-align: text-top;
+}
+@font-face {
+    font-family: "TerminusTTF";
+    font-weight: normal;
+    font-style: normal;
+    src: url("https://static.dsezer.dev/static/TerminusTTF.ttf");
+}
+
+@font-face {
+    font-family: "TerminusTTF";
+    font-weight: bold;
+    font-style: italic;
+    src: url("https://static.dsezer.dev/static/TerminusTTF-Bold%20Italic.ttf");
+}
+
+@font-face {
+    font-family: "TerminusTTF";
+    font-weight: bold;
+    font-style: normal;
+    src: url("https://static.dsezer.dev/static/TerminusTTF-Bold.ttf");
+}
+
+@font-face {
+    font-family: "TerminusTTF";
+    font-weight: normal;
+    font-style: italic;
+    src: url("https://static.dsezer.dev/static/TerminusTTF-Italic.ttf");
+}
+
+body {
+    font-size: 12pt;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    margin: 1em 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 0 0 2em;
+}
+
+.tag-internal::before {
+    content: "[internal] ";
+    color: lime;
+}
+body {
+    font-family: var(--fontFamily);
+    background-color: var(--backgroundColor);
+    color: var(--color);
+}
+
+a {
+    color: var(--aColor);
+}
+
+a:hover {
+    color: var(--aHoverColor);
+}
+
+summary {
+    color: var(--aColor);
+}
+
+summary:hover {
+    cursor: pointer;
+    color: var(--aHoverColor);
+}
+:root {
+    --fontFamily: "TerminusTTF", monospace;
+    --emoji: "Twemoji";
+    --backgroundColor: black;
+    --color: white;
+    --aColor: cyan;
+    --aHoverColor: yellow;
+}
